@@ -17,15 +17,6 @@ module.exports = {
       age: {
         type: Sequelize.INTEGER
       },
-
-      email: {
-        type: Sequelize.STRING
-      },
-
-      phone: {
-        type: Sequelize.INTEGER
-      },
-      
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -35,6 +26,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+    
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Customers');
