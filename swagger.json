@@ -1,0 +1,166 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Customers Application API",
+      "description": "Customers Application woth crud",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "customers-appv2.herokuapp.com",
+    "basePath": "/api/",
+    "tags": [
+      {
+        "name": "Customers",
+        "description": "API for customers in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/customers": {
+        "post": {
+          "tags": [
+            "Customers"
+          ],
+          "description": "Create new user in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to create",
+              "schema": {
+                "$ref": "api/customers"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New user is created",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "Customers"
+          ],
+          "summary": "Get all customers in system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "api/customers"
+              }
+            }
+          }
+        }
+      },
+      "/customers/{customerId}": {
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "description": "ID of customer that we want to find",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Customers"
+          ],
+          "summary": "Get customer with given ID",
+          "responses": {
+            "200": {
+              "description": "Customer is found",
+              "schema": {
+                "$ref": "api/customers/:id"
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete customer with given ID",
+          "tags": [
+            "Customers"
+          ],
+          "responses": {
+            "200": {
+              "description": "Customer is deleted",
+              "schema": {
+                "$ref": "api/customers/:id"
+              }
+            }
+          }
+        },
+        "put": {
+          "summary": "Update customer with give ID",
+          "tags": [
+            "Customers"
+          ],
+          "parameters": [
+            {
+              "name": "customer",
+              "in": "body",
+              "description": "Customer with new values of properties",
+              "schema": {
+                "$ref": "api/customers/:id"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Customer is updated",
+              "schema": {
+                "$ref": "api/customers/:id"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Customer": {
+        "required": [
+          "email",
+          "_id"
+        ],
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "age": {
+            "type": "number"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "number"
+          }
+        }
+      },
+      "Users": {
+        "type": "array",
+        "$ref": "/customers"
+      }
+    }
+  }

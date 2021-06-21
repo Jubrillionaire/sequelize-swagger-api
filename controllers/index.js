@@ -71,5 +71,5 @@ module.exports = {
     getAllCustomers,
     getCustomerById,
     updateCustomer,
-    deleteCustomer,
+    deleteCustomer
 }
