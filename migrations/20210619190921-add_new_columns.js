@@ -4,14 +4,14 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return Promise.all([
-      // queryInterface.addColumn('Customers', 'email', {
-      //   type: Sequelize.STRING,
-      //   allowNull: true,
-      // }),
-      // queryInterface.addColumn('Customers', 'phone', {
-      //   type: Sequelize.INTEGER,
-      //   allowNull: true,
-      // }),
+      queryInterface.addColumn('Customers', 'email', {
+        type: Sequelize.STRING,
+        allowNull: true,
+      }),
+      queryInterface.addColumn('Customers', 'phone', {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+      }),
     ]);
   },
 
