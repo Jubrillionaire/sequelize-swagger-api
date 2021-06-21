@@ -158,7 +158,7 @@
           }
         }
       },
-      "Users": {
+      "Customers": {
         "type": "array",
         "$ref": "/customers"
       }
