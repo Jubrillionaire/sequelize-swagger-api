@@ -39,7 +39,7 @@
               "in": "body",
               "description": "User that we want to create",
               "schema": {
-                "$ref": "api/customers"
+                "$ref": "#/definitions/Customer"
               }
             }
           ],
@@ -50,7 +50,7 @@
             "200": {
               "description": "New user is created",
               "schema": {
-                "$ref": "#/definitions/User"
+                "$ref": "#/definitions/Customer"
               }
             }
           }
@@ -64,7 +64,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "api/customers"
+                "$ref": "#/definitions/Customer"
               }
             }
           }
@@ -89,7 +89,7 @@
             "200": {
               "description": "Customer is found",
               "schema": {
-                "$ref": "api/customers/:id"
+                "$ref": "#/definitions/Customer"
               }
             }
           }
@@ -103,7 +103,7 @@
             "200": {
               "description": "Customer is deleted",
               "schema": {
-                "$ref": "api/customers/:id"
+                "$ref": "#/definitions/Customer"
               }
             }
           }
@@ -119,7 +119,7 @@
               "in": "body",
               "description": "Customer with new values of properties",
               "schema": {
-                "$ref": "api/customers/:id"
+                "$ref": "#/definitions/Customer"
               }
             }
           ],
@@ -127,7 +127,7 @@
             "200": {
               "description": "Customer is updated",
               "schema": {
-                "$ref": "api/customers/:id"
+                "$ref": "#/definitions/Customer"
               }
             }
           }
