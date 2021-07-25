@@ -3,7 +3,7 @@
   "development": {
     "database": "customers_app",
     "dialect": "postgres",
-    "password": "4497",
+    "password": "",
     "username": "postgres"
   },
   "test": {
